@@ -573,7 +573,7 @@ class ExLlamaCache:
 
             if copy_from is None:
 
-                p_key_states = torch.zeros(self.batch_size, self.config.num_key_value_heads, self.max_seq_len, self.config.head_dim, dtype = torch.float16, device = self.model.config.device_map.layers[i])
+                p_key_states = torch.zeros(self.batch_size, self.config.num_key_value_heads, self.max_seq_len, int(self.config.head_dim), dtype = torch.float16, device = self.model.config.device_map.layers[i])
                 p_value_states = torch.zeros(self.batch_size, self.config.num_key_value_heads, self.max_seq_len, self.config.head_dim, dtype = torch.float16, device = self.model.config.device_map.layers[i])
 
             else:
